@@ -14,8 +14,8 @@ class ReduceFractionTest extends TestCase
      */
     public function noReduction()
     {
-        $this->assertEquals(new Fraction(1), (new Fraction(1))->reduce());
-        $this->assertEquals(new Fraction(1, 2), (new Fraction(1, 2))->reduce());
+        $this->assertEquals(new Fraction(1), (new Fraction(1)));
+        $this->assertEquals(new Fraction(1, 2), (new Fraction(1, 2)));
     }
 
     /**
@@ -23,7 +23,7 @@ class ReduceFractionTest extends TestCase
      */
     public function reduceToIntegers()
     {
-        $this->assertEquals(new Fraction(2), (new Fraction(6, 3))->reduce());
+        $this->assertEquals(new Fraction(2), (new Fraction(6, 3)));
     }
 
     /**
@@ -31,6 +31,6 @@ class ReduceFractionTest extends TestCase
      */
     public function reduceToLowestTerms()
     {
-        $this->assertEquals(new Fraction(1,4), (new Fraction(6, 24))->reduce());
+        $this->assertEquals(new Fraction(1,4), (new Fraction(6, 24)));
     }
 }

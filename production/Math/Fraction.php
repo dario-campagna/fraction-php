@@ -22,8 +22,9 @@ class Fraction
      */
     public function __construct($numerator, $denominator = 1)
     {
-        $this->numerator = $numerator;
-        $this->denominator = $denominator;
+        $gcd = NumberTheory::gcd($numerator, $denominator);
+        $this->numerator = $numerator / $gcd;
+        $this->denominator = $denominator / $gcd;
     }
 
     /**
@@ -33,18 +34,6 @@ class Fraction
     public function plus($that): Fraction
     {
         return new Fraction($this->numerator + $that->numerator, $this->denominator);
-    }
-
-    public function reduce(): Fraction
-    {
-        if ($this -> numerator % $this->denominator == 0) {
-            return new Fraction($this->numerator / $this->denominator);
-        } else if (NumberTheory::gcd($this->numerator,$this->denominator) == 1) {
-            return $this;
-        } else {
-            $gcd = NumberTheory::gcd($this->numerator, $this->denominator);
-            return new Fraction($this->numerator/$gcd, $this->denominator/$gcd);
-        }
     }
 
 }
