@@ -32,10 +32,6 @@ class Fraction
      */
     public function plus($fraction): Fraction
     {
-        if ($this->denominator > 1) {
-            return new Fraction($this->integer + $fraction->integer, $this->denominator);
-        } else {
-            return new Fraction($this->integer + $fraction->integer);
-        }
+        return new Fraction($this->integer + $fraction->integer, $this->denominator);
     }
 }
