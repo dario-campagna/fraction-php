@@ -61,7 +61,7 @@ class AddFractionTest extends \PHPUnit_Framework_TestCase
     /**
      * @test
      */
-    public function diffrentDenominators()
+    public function differentDenominators()
     {
         $this->assertEquals(new Fraction(5,4), (new Fraction(3, 4))->plus(new Fraction(1,2)));
     }
