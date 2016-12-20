@@ -26,12 +26,6 @@ class Fraction
      */
     public function plus($fraction): Fraction
     {
-        if ($this->integer > 0 && $fraction->integer > 0) {
-            return new Fraction(5);
-        } else if ($this->integer == 0) {
-            return $fraction;
-        } else {
-            return $this;
-        }
+        return new Fraction($this->integer + $fraction->integer);
     }
 }
