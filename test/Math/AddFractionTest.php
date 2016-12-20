@@ -38,5 +38,13 @@ class AddFractionTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals(new Fraction(5), (new Fraction(2))->plus(new Fraction(3)));
     }
 
-
+    /**
+     * @test
+     */
+    public function negativeIntegers()
+    {
+        $this->assertEquals(new Fraction(2), (new Fraction(-4))->plus(new Fraction(6)));
+        $this->assertEquals(new Fraction(1), (new Fraction(8))->plus(new Fraction(-7)));
+        $this->assertEquals(new Fraction(-20), (new Fraction(-11))->plus(new Fraction(-9)));
+    }
 }
