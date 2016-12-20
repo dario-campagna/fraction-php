@@ -29,7 +29,7 @@ class Fraction
         if ($this->integer == 0) {
             return $fraction;
         } else {
-            return new Fraction(0);
+            return $this;
         }
     }
 }

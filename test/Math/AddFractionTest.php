@@ -21,4 +21,12 @@ class AddFractionTest extends \PHPUnit_Framework_TestCase
     {
         $this->assertEquals(new Fraction(1), (new Fraction(0))->plus(new Fraction(1)));
     }
+
+    /**
+     * @test
+     */
+    public function nonZeroPlusZero()
+    {
+        $this->assertEquals(new Fraction(1), (new Fraction(1))->plus(new Fraction(0)));
+    }
 }
