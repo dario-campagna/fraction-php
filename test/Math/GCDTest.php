@@ -1,28 +1,17 @@
 <?php
 
-namespace Math;
-
+namespace Esteco\Math;
 
 use PHPUnit\Framework\TestCase;
 
 class GCDTest extends TestCase
 {
-    private function gcd($a, $b): int
-    {
-        while ($b != 0) {
-            $t = $b;
-            $b = $a % $b;
-            $a = $t;
-        }
-        return $a;
-    }
-
     /**
      * @test
      */
     public function oneMultipleOfTheOther()
     {
-        $this->assertEquals(6, $this->gcd(6, 24));
+        $this->assertEquals(6, NumberTheory::gcd(6, 24));
     }
 
     /**
@@ -30,7 +19,7 @@ class GCDTest extends TestCase
      */
     public function relativelyPrime()
     {
-        $this->assertEquals(1, $this->gcd(7, 9));
+        $this->assertEquals(1, NumberTheory::gcd(7, 9));
     }
 
     /**
@@ -38,7 +27,7 @@ class GCDTest extends TestCase
      */
     public function commonFactor()
     {
-        $this->assertEquals(2, $this->gcd(18, 8));
+        $this->assertEquals(2, NumberTheory::gcd(18, 8));
     }
 
     /**
@@ -46,6 +35,6 @@ class GCDTest extends TestCase
      */
     public function sameArguments()
     {
-        $this->assertEquals(2, $this->gcd(2, 2));
+        $this->assertEquals(2, NumberTheory::gcd(2, 2));
     }
 }
