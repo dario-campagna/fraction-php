@@ -25,4 +25,12 @@ class ReduceFractionTest extends TestCase
     {
         $this->assertEquals(new Fraction(2), (new Fraction(6, 3))->reduce());
     }
+
+    /**
+     * @test
+     */
+    public function reduceToLowestTerms()
+    {
+        $this->assertEquals(new Fraction(1,4), (new Fraction(6, 24))->reduce());
+    }
 }

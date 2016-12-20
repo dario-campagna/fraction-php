@@ -39,8 +39,11 @@ class Fraction
     {
         if ($this -> numerator % $this->denominator == 0) {
             return new Fraction($this->numerator / $this->denominator);
-        } else {
+        } else if (NumberTheory::gcd($this->numerator,$this->denominator) == 1) {
             return $this;
+        } else {
+            $gcd = NumberTheory::gcd($this->numerator, $this->denominator);
+            return new Fraction($this->numerator/$gcd, $this->denominator/$gcd);
         }
     }
 
