@@ -54,5 +54,7 @@ class AddFractionTest extends \PHPUnit_Framework_TestCase
     public function sameNonTrivialDenominator()
     {
         $this->assertEquals(new Fraction(2, 3), (new Fraction(1, 3))->plus(new Fraction(1,3)));
+        $this->assertEquals(new Fraction(1), (new Fraction(1, 2))->plus(new Fraction(1,2)));
+        $this->assertEquals(new Fraction(1,2), (new Fraction(3, 8))->plus(new Fraction(1,8)));
     }
 }
