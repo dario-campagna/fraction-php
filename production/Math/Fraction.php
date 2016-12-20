@@ -34,4 +34,9 @@ class Fraction
     {
         return new Fraction($this->integer + $fraction->integer, $this->denominator);
     }
+
+    public function reduce(): Fraction
+    {
+        return $this;
+    }
 }
