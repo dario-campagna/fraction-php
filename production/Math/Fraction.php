@@ -9,7 +9,7 @@ class Fraction
     /**
      * @var int
      */
-    private $integer;
+    private $numerator;
     /**
      * @var int
      */
@@ -17,26 +17,31 @@ class Fraction
 
     /**
      * Fraction constructor.
-     * @param int $integer
+     * @param int $numerator
      * @param int $denominator
      */
-    public function __construct($integer, $denominator = 1)
+    public function __construct($numerator, $denominator = 1)
     {
-        $this->integer = $integer;
+        $this->numerator = $numerator;
         $this->denominator = $denominator;
     }
 
     /**
-     * @param $fraction
+     * @param $that
      * @return Fraction
      */
-    public function plus($fraction): Fraction
+    public function plus($that): Fraction
     {
-        return new Fraction($this->integer + $fraction->integer, $this->denominator);
+        return new Fraction($this->numerator + $that->numerator, $this->denominator);
     }
 
     public function reduce(): Fraction
     {
-        return $this;
+        if ($this -> numerator % $this->denominator == 0) {
+            return new Fraction($this->numerator / $this->denominator);
+        } else {
+            return $this;
+        }
     }
+
 }
