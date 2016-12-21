@@ -38,4 +38,14 @@ class GCDTest extends TestCase
     {
         $this->assertEquals(2, NumberTheory::gcd(2, 2));
     }
+
+    /**
+     * @test
+     */
+    public function zeroAsArgument()
+    {
+        $this->assertEquals(2, NumberTheory::gcd(2, 0));
+        $this->assertEquals(3, NumberTheory::gcd(0, 3));
+        $this->assertEquals(1, NumberTheory::gcd(0, 0));
+    }
 }

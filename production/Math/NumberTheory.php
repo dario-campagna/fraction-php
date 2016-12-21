@@ -11,6 +11,6 @@ class NumberTheory
             $b = $a % $b;
             $a = $t;
         }
-        return abs($a);
+        return $a != 0 ? abs($a) : 1;
     }
 }
