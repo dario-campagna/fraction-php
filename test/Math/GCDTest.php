@@ -28,6 +28,7 @@ class GCDTest extends TestCase
     public function commonFactor()
     {
         $this->assertEquals(2, NumberTheory::gcd(18, 8));
+        $this->assertEquals(4, NumberTheory::gcd(16, -4));
     }
 
     /**
