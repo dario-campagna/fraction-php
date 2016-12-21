@@ -22,9 +22,10 @@ class Fraction
      */
     public function __construct($numerator, $denominator = 1)
     {
+        $sign = $denominator > 0 ? 1 : -1;
         $gcd = NumberTheory::gcd($numerator, $denominator);
-        $this->numerator = $numerator / $gcd;
-        $this->denominator = $denominator / $gcd;
+        $this->numerator = $numerator / $gcd * $sign;
+        $this->denominator = $denominator / $gcd * $sign;
     }
 
     /**

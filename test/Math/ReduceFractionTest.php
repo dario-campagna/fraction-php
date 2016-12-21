@@ -33,4 +33,11 @@ class ReduceFractionTest extends TestCase
     {
         $this->assertEquals(new Fraction(1,4), (new Fraction(6, 24)));
     }
+    /**
+     * @test
+     */
+    public function reduceWhenNegatives()
+    {
+        $this->assertEquals(new Fraction(-4), (new Fraction(16, -4)));
+    }
 }
